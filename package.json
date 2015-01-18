@@ -1,0 +1,35 @@
+{
+  "name": "Node-React",
+  "version": "0.0.1",
+  "description": "Testing some stuff out",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "start": "gulp develop"
+  },
+  "author": "wschwarz1986@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.1",
+    "express": "^4.11.0",
+    "jade": "^1.9.0",
+    "jsx-loader": "^0.12.2",
+    "morgan": "^1.5.1",
+    "path": "^0.11.14",
+    "react": "^0.12.2",
+    "react-router": "^0.11.6",
+    "swig": "^1.4.2",
+    "webpack": "^1.4.15"
+  },
+  "devDependencies": {
+    "chalk": "^0.5.1",
+    "connect-livereload": "^0.5.2",
+    "gulp": "^3.8.10",
+    "gulp-less": "^2.0.1",
+    "gulp-livereload": "^3.4.0",
+    "gulp-nodemon": "^1.0.5",
+    "gulp-webpack": "^1.1.2",
+    "rimraf": "^2.2.8",
+    "run-sequence": "^1.0.2"
+  }
+}
