@@ -1,3 +1,5 @@
+'use strict';
+
 var Router = require('react-router');
 var Route = Router.Route;
 var Routes = Router.Routes;

@@ -1,22 +1,45 @@
 'use strict';
 
+var React = require('react');
+var Reflux = require('reflux');
+var ProductStorePack = require('../stores/product');
+var ProductActions = ProductStorePack.ProductActions;
+var ProductStore = ProductStorePack.ProductStore;
 
-var React = require('React');
-// var Test = require('./test');
 
 var Other = React.createClass({
-	render: function() {
+	mixins: [Reflux.listenTo(ProductStore, "loadProduct")],
+
+	componentDidMount: function() {                        
+        ProductActions.load();        
+    },
+
+    loadProduct: function(product) {    	
+    	this.setState(product);
+    },
+
+    getInitialState: function() {
+    	return {
+    		name: '',
+			size: '',
+			material: '',
+			img: '',
+			description: ''
+    	};
+    },
+
+	render: function() {		
 		return (
-			<div className="item-box">
+			<div className="item-box">				
 				<div className="item-details">
-					<h4>1026 DM</h4>
-					<span>{'0.5 x 1.0"'}</span>
-					<span>{'Matte BOPP'}</span>
+					<h4>{this.state.name}</h4>
+					<span>{this.state.size}</span>
+					<span>{this.state.material}</span>
 				</div>
-				<img className="item-img" src="https://s3-us-west-1.amazonaws.com/durareadytest/1026DMt.jpg" />
+				<img className="item-img" src={this.state.img} />
 				<div className="clearfix"></div>
 				<span className="item-description">
-					{'0.5 x 1.0&#34; small matte BOPP labels, 1000 labels per roll.'}
+					{this.state.description}
 				</span>
 				<button className="btn">Get Price</button>
 			</div>

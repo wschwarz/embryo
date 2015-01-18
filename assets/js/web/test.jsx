@@ -1,10 +1,10 @@
 'use strict';
 
-
-var React = require('React');
+var React = require('react');
 
 
 var Test = React.createClass({
+
 	render: function() {
 		return (
 			<div id="test-react-component">
