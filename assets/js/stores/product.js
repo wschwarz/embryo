@@ -1,6 +1,7 @@
 'use strict';
 
 var Reflux = require('reflux');
+var request = require('superagent');
 
 var ProductActions = Reflux.createActions([
 	"load",
@@ -18,16 +19,15 @@ var ProductStore = Reflux.createStore({
 		// this.listenTo(ProductActions.save, this.onSave);
 	},
 
-	onLoad: function() {		
-		this.productData = {
-			name: '1026 DM',
-			size: '0.5 x 1.0"',
-			material: 'Matte BOPP',
-			img: 'https://s3-us-west-1.amazonaws.com/durareadytest/1026DMt.jpg',
-			description: '0.5 x 1.0&#34; small matte BOPP labels, 1000 labels per roll.'
+	onLoad: function() {
+		var cb = function (error, res) {			
+			if (error) { console.error(error); }
+			else {
+				this.productData = JSON.parse(res.text);
+				this.trigger(JSON.parse(res.text));
+			}			
 		};
-		var products = this.productData;		
-		this.trigger(products);
+		request.get('/api/product', cb.bind(this));
 	}
 
 });
