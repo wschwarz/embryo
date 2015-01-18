@@ -6,7 +6,6 @@ var ProductStorePack = require('../stores/product');
 var ProductActions = ProductStorePack.ProductActions;
 var ProductStore = ProductStorePack.ProductStore;
 
-
 var Other = React.createClass({
 	mixins: [Reflux.listenTo(ProductStore, "loadProduct")],
 

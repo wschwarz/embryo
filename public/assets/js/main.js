@@ -128,12 +128,13 @@
 				React.createElement("div", {id: "page"}, 
 					React.createElement("nav", {className: "navbar navbar-inverse navbar-fixed-top"}, 
 						React.createElement("div", {className: "container"}, 
-							React.createElement("div", {className: "navbar-header"}, 					
+							React.createElement("div", {className: "navbar-header"}, 
 								React.createElement("a", {className: "navbar-brand", href: "/"}, "Base Project")
 							), 
 							React.createElement("div", {id: "navbar", className: "collapse navbar-collapse"}, 
 								React.createElement("ul", {className: "nav navbar-nav"}, 
-									React.createElement("li", {className: "active"}, React.createElement("a", {href: "/"}, "Home"))								
+									React.createElement("li", {className: "active"}, React.createElement("a", {href: "/"}, "Home")), 
+									React.createElement("li", null, React.createElement("a", {href: "/contact"}, "Contact"))
 								)
 							)
 						)
@@ -200,7 +201,6 @@
 	var ProductStorePack = __webpack_require__(24);
 	var ProductActions = ProductStorePack.ProductActions;
 	var ProductStore = ProductStorePack.ProductStore;
-
 
 	var Other = React.createClass({displayName: "Other",
 		mixins: [Reflux.listenTo(ProductStore, "loadProduct")],
