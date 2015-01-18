@@ -1,6 +1,7 @@
 var express = require('express');
 var swig = require('swig');
 var morgan = require('morgan');
+var fs = require('fs');
 
 
 var app = express();
@@ -25,9 +26,13 @@ app.use(require('connect-livereload')({
 // 	res.render('index', {title: 'hey', authors: ['Bob', 'Linda', 'Jane']});
 // });
 
+fs.readdirSync('./controllers').forEach(function (file) {
+	require('./controllers/' + file)(app);
+});
+
 app.all('*', function (req, res) {
 	res.render('index', { assets: 'main' });
-})
+});
 
 var server = app.listen(3000, function () {
 

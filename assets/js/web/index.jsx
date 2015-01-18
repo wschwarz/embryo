@@ -10,12 +10,13 @@ var Index = React.createClass({
 			<div id="page">
 				<nav className={"navbar navbar-inverse navbar-fixed-top"}>
 					<div className="container">
-						<div className="navbar-header">					
+						<div className="navbar-header">
 							<a className="navbar-brand" href="/">Base Project</a>
 						</div>
 						<div id="navbar" className={"collapse navbar-collapse"}>
 							<ul className={"nav navbar-nav"}>
-								<li className="active"><a href="/">Home</a></li>								
+								<li className="active"><a href="/">Home</a></li>
+								<li><a href="/contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>

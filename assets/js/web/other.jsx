@@ -1,7 +1,7 @@
 'use strict';
 
 
-var React = require('React');
+var React = require('react');
 // var Test = require('./test');
 
 var Other = React.createClass({
