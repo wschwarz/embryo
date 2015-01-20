@@ -13,6 +13,8 @@ var connectionString = config.database.dialect + "://"
 	+ config.database.host + "/"
 	+ config.database.database;
 
+app.connectionString = connectionString;
+
 app.engine('html', swig.renderFile);
 
 app.set('view engine', 'html');

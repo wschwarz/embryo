@@ -18,29 +18,29 @@ var Other = React.createClass({
     },
 
     getInitialState: function() {
-    	return {
-    		name: '',
-			size: '',
-			material: '',
-			img: '',
-			description: ''
-    	};
+    	return { products: [] };
     },
 
-	render: function() {		
+	render: function() {
 		return (
-			<div className="item-box">				
-				<div className="item-details">
-					<h4>{this.state.name}</h4>
-					<span>{this.state.size}</span>
-					<span>{this.state.material}</span>
-				</div>
-				<img className="item-img" src={this.state.img} />
-				<div className="clearfix"></div>
-				<span className="item-description">
-					{this.state.description}
-				</span>
-				<button className="btn">Get Price</button>
+			<div className="container">
+				{ this.state.products.map(function(product) {
+					return (
+						<div className="item-box">				
+							<div className="item-details">
+								<h4>{product.name}</h4>
+								<span>{product.size}</span>
+								<span>{product.material}</span>
+							</div>
+							<img className="item-img" src={product.img} />
+							<div className="clearfix"></div>
+							<span className="item-description">
+								{product.description}
+							</span>
+							<button className="btn">Get Price</button>
+						</div>
+					);
+				})}
 			</div>
 		);
 	}
