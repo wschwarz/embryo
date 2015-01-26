@@ -8,6 +8,7 @@ var gulpWebpack = require('gulp-webpack');
 var webpackConfig = require('./webpack.config.js');
 var less = require('gulp-less');
 var rimraf = require('rimraf');
+var mocha = require('gulp-spawn-mocha');
 
 var paths = {
 	js: ['assets/js/**/**/**/*.js', 'assets/js/**/**/**/*.jsx'],
@@ -18,6 +19,17 @@ var paths = {
 		return path.join('./public/assets', p);
 	}
 };
+
+gulp.task('test', function(cb) {
+	gulp.src([ './test/**/*.js', 
+		'./test/*.js' ])
+		.pipe(mocha({
+            harmony: true,
+            ignoreLeaks: false,
+            reporter: 'spec',
+            env: {'NODE_ENV': 'development'}
+        }));
+});
 
 gulp.task('clean', function(cb) {
 	rimraf('./public/assets', cb);
