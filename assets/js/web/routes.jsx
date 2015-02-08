@@ -9,9 +9,9 @@ var Redirect = Router.Redirect;
 
 var routes = (
 	<Route handler={require('./index')} path="/">
-		<DefaultRoute handler={require('./test')} />
+		<DefaultRoute handler={require('./home')} />
 
-		<Route name="/other" handler={require('./other')} />
+		<Route name="/product" handler={require('./product')} />
 
 		<NotFoundRoute handler={require('./404')}/>
 	</Route>

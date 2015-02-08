@@ -6,7 +6,7 @@ var ProductStorePack = require('../stores/product');
 var ProductActions = ProductStorePack.ProductActions;
 var ProductStore = ProductStorePack.ProductStore;
 
-var Other = React.createClass({
+var Product = React.createClass({
 	mixins: [Reflux.listenTo(ProductStore, "loadProduct")],
 
 	componentDidMount: function() {                        
@@ -24,6 +24,7 @@ var Other = React.createClass({
 	render: function() {
 		return (
 			<div className="container">
+				<p>Simple database example</p>
 				{ this.state.products.map(function(product) {
 					return (
 						<div className="item-box">				
@@ -46,4 +47,4 @@ var Other = React.createClass({
 	}
 });
 
-module.exports = Other;
+module.exports = Product;

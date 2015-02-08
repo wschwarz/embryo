@@ -1,11 +1,11 @@
 {
-  "name": "Node-React",
+  "name": "Embryo",
   "version": "0.0.1",
-  "description": "Testing some stuff out",
+  "description": "Starter project using Node + React",
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
-    "start": "gulp develop"
+    "start": "gulp dev"
   },
   "author": "wschwarz1986@gmail.com",
   "license": "ISC",
